@@ -1,29 +1,33 @@
 package testCases;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
-import java.util.List;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import pages.HomePage;
+import pages.Header;
+import pages.Footer;
 
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class HomePageTest {
-    WebDriver driver;
-    HomePage homePage;
+    static WebDriver driver;
+    static HomePage homePage;
+    static Header header;
+    static Footer footer;
 
-    @BeforeClass
-    public void setUp() {
-
+    @BeforeAll
+    public static void setUp() {
         driver = new ChromeDriver();
         driver.get("https://www.demoblaze.com/");
         homePage = new HomePage(driver);
+        header = new Header(driver);
+        footer = new Footer(driver);
     }
 
     @Test
@@ -34,17 +38,29 @@ public class HomePageTest {
     }
 
     @Test
-    public void testHomeGageCarousel(){
+    public void testHeader() {
+        WebElement headerNavBar = header.getHeader();
+        assertTrue(headerNavBar.isDisplayed(), "header navigation bar is not displayed");
+    }
+
+    @Test
+    public void testFooter() {
+        WebElement footerNavBar = footer.getFooter();
+        assertTrue(footerNavBar.isDisplayed(), "footer navigation bar is not displayed");
+    }
+
+    @Test
+    public void testHomeGageCarousel() {
         WebElement carousel = homePage.getCarousel();
         assertTrue(carousel.isDisplayed(), "Carousel is not displayed");
     }
+
     @Test
     public void testHomePageTitle() {
         // Verify the page title
         String title = homePage.getPageTitle();
         assertEquals(title, "STORE");
     }
-
 
     @Test
     public void testGetCategories() {
@@ -75,9 +91,8 @@ public class HomePageTest {
         // Add more assertions for other items if needed
     }
 
-
-    @AfterClass
-    public void tearDown() {
+    @AfterAll
+    public static void tearDown() {
         // Close the browser
         if (driver != null) {
             driver.quit();

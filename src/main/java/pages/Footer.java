@@ -3,15 +3,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class Header {
+public class Footer {
     WebDriver driver;
-    public Header(WebDriver driver) {
+    public Footer(WebDriver driver) {
         this.driver = driver;
 
     }
-    public WebElement getHeader() {
+    public WebElement getFooter() {
 
-        return driver.findElement(By.id("navbarExample"));
+        return driver.findElement(By.id("fotcont"));
 
     }
 
