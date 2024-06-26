@@ -31,15 +31,11 @@ public class HomePage {
     }
 
     public List<WebElement> getCategories() {
-        // Find the categories list
         WebElement categoriesList = driver.findElement(By.className("list-group"));
-
-        // Print the text of each category
         List<WebElement> categories = categoriesList.findElements(By.tagName("a"));
         for (WebElement category : categories) {
             System.out.println(category.getText());
         }
-
         return categories;
     }
 
