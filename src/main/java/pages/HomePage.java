@@ -22,6 +22,13 @@ public class HomePage {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(1000));
 
     }
+    public String getPageTitle() {
+        return driver.getTitle();
+    }
+
+    public String getCurrentUrl() {
+        return driver.getCurrentUrl();
+    }
 
     public List<WebElement> getCategories() {
         // Find the categories list
@@ -52,13 +59,6 @@ public class HomePage {
         return itemNames;
     }
 
-    public String getPageTitle() {
-        return driver.getTitle();
-    }
-
-    public String getCurrentUrl() {
-        return driver.getCurrentUrl();
-    }
 
     public WebElement getCarousel(){
         return driver.findElement(By.id("carouselExampleIndicators"));
