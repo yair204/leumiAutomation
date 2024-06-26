@@ -38,17 +38,17 @@ public class CartPageTest {
         assertEquals(currentUrl, "https://www.demoblaze.com/cart.html","cart page url not current");
     }
 
-//    @Test
-//    public void testHeader() {
-//        WebElement headerNavBar = header.getHeader();
-//        assertTrue(headerNavBar.isDisplayed(), "header navigation bar is not displayed");
-//    }
-//
-//    @Test
-//    public void testFooter() {
-//        WebElement footerNavBar = footer.getFooter();
-//        assertTrue(footerNavBar.isDisplayed(), "footer navigation bar is not displayed");
-//    }
+    @Test
+    public void testHeader() {
+        WebElement headerNavBar = header.getHeader();
+        assertTrue(headerNavBar.isDisplayed(), "header navigation bar is not displayed");
+    }
+
+    @Test
+    public void testFooter() {
+        WebElement footerNavBar = footer.getFooter();
+        assertTrue(footerNavBar.isDisplayed(), "footer navigation bar is not displayed");
+    }
 
     @AfterAll
     public static void tearDown() {
