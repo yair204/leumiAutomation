@@ -20,6 +20,7 @@ public class CategoriesComponentsTest {
     public static void setUp() {
         driver = new ChromeDriver();
         driver.get("https://www.demoblaze.com/#");
+        driver.manage().window().maximize();
         categoriesComponent = new CategoriesComponent(driver);
     }
 
@@ -31,6 +32,14 @@ public class CategoriesComponentsTest {
         System.out.println(actualItems);
         assertTrue(actualItems.containsAll(expectedItems), "Expected to find all items in Monitors category.");
     }
+    @Test
+    public void getPhonesCategory() {
+        List<String> expectedItems = Arrays.asList("Samsung galaxy s6", "Nokia lumia 1520", "Nexus 6", "Samsung galaxy s7", "Iphone 6 32gb", "Sony xperia z5", "HTC One M9");
+        List<String> actualItems = categoriesComponent.getPhonesCategory();
+        System.out.println("Phones");
+        System.out.println(actualItems);
+        assertTrue(actualItems.containsAll(expectedItems), "Expected to find all items in Phones category.");
+    }
 
     @Test
     public void getLaptopsCategory() {
@@ -41,14 +50,6 @@ public class CategoriesComponentsTest {
         assertTrue(actualItems.containsAll(expectedItems), "Expected to find all items in Laptops category.");
     }
 
-    @Test
-    public void getPhonesCategory() {
-        List<String> expectedItems = Arrays.asList("Samsung galaxy s6", "Nokia lumia 1520", "Nexus 6", "Samsung galaxy s7", "Iphone 6 32gb", "Sony xperia z5", "HTC One M9", "Sony vaio i5", "Sony vaio i7");
-        List<String> actualItems = categoriesComponent.getPhonesCategory();
-        System.out.println("Phones");
-        System.out.println(actualItems);
-        assertTrue(actualItems.containsAll(expectedItems), "Expected to find all items in Phones category.");
-    }
 
     @AfterAll
     public static void tearDown() {

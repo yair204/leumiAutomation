@@ -88,7 +88,6 @@ public class HomePageTest {
         assertTrue(items.contains("HTC One M9"), "Expected to find Nokia lumia 1520.");
         assertTrue(items.contains("Sony vaio i5"), "Expected to find Nokia lumia 1520.");
         assertTrue(items.contains("Sony vaio i7"), "Expected to find Nokia lumia 1520.");
-        // Add more assertions for other items if needed
     }
 
     @AfterAll
