@@ -34,6 +34,9 @@ public class OrderTest {
     public void addItems(){
         List<String> itemsName = order.addItemToCart();
         List<String> itemsInCart = order.getItemsFromCart();
+        int prices = order.getPrices();
+        int totalPrice = order.getTotalPrice();
+        assertEquals(prices,totalPrice,"the total price not equal to items price");
         assertTrue(itemsName.containsAll(itemsInCart), "List name not equals");
     }
 

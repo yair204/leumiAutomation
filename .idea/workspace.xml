@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b64f6555-0f12-4bec-a24b-cb6027f9bc0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/testCases/OrderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/OrderFormPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/testCases/OrderFormPageTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/Header.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/OrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/OrderTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -40,6 +42,9 @@
     "Application.Main.executor": "Run",
     "JUnit.ContactModalTest.executor": "Run",
     "JUnit.HeaderTest.testNavbarLinks.executor": "Run",
+    "JUnit.OrderFormPageTest.executor": "Debug",
+    "JUnit.OrderFormPageTest.testOrderDetails.executor": "Run",
+    "JUnit.OrderFormPageTest.testOrderForm.executor": "Run",
     "JUnit.OrderTest.addItems.executor": "Run",
     "JUnit.OrderTest.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -55,7 +60,7 @@
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.OrderTest">
+  <component name="RunManager">
     <configuration name="HeaderTest.testNavbarLinks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="leumiTask" />
       <extension name="coverage">
@@ -67,6 +72,38 @@
       <option name="PACKAGE_NAME" value="testCases" />
       <option name="MAIN_CLASS_NAME" value="testCases.HeaderTest" />
       <option name="METHOD_NAME" value="testNavbarLinks" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderFormPageTest.testOrderDetails" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="leumiTask" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testCases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testCases" />
+      <option name="MAIN_CLASS_NAME" value="testCases.OrderFormPageTest" />
+      <option name="METHOD_NAME" value="testOrderDetails" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderFormPageTest.testOrderForm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="leumiTask" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testCases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testCases" />
+      <option name="MAIN_CLASS_NAME" value="testCases.OrderFormPageTest" />
+      <option name="METHOD_NAME" value="testOrderForm" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -105,8 +142,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.OrderTest" />
+        <item itemvalue="JUnit.OrderFormPageTest.testOrderDetails" />
+        <item itemvalue="JUnit.OrderFormPageTest.testOrderForm" />
         <item itemvalue="JUnit.OrderTest.addItems" />
+        <item itemvalue="JUnit.OrderTest" />
         <item itemvalue="JUnit.HeaderTest.testNavbarLinks" />
       </list>
     </recent_temporary>
@@ -145,5 +184,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/testCases/OrderFormPageTest.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
