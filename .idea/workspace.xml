@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b64f6555-0f12-4bec-a24b-cb6027f9bc0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/ContactPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/testCases/ContactPageTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/testCases/OrderTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/CartPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/CartPageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/CategoriesComponentsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/CategoriesComponentsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/HeaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/HeaderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/HomePageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/HomePageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/Header.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +40,8 @@
     "Application.Main.executor": "Run",
     "JUnit.ContactModalTest.executor": "Run",
     "JUnit.HeaderTest.testNavbarLinks.executor": "Run",
+    "JUnit.OrderTest.addItems.executor": "Run",
+    "JUnit.OrderTest.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -56,7 +55,7 @@
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.OrderTest">
     <configuration name="HeaderTest.testNavbarLinks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="leumiTask" />
       <extension name="coverage">
@@ -73,8 +72,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OrderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="leumiTask" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testCases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testCases" />
+      <option name="MAIN_CLASS_NAME" value="testCases.OrderTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderTest.addItems" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="leumiTask" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testCases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testCases" />
+      <option name="MAIN_CLASS_NAME" value="testCases.OrderTest" />
+      <option name="METHOD_NAME" value="addItems" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OrderTest" />
+        <item itemvalue="JUnit.OrderTest.addItems" />
         <item itemvalue="JUnit.HeaderTest.testNavbarLinks" />
       </list>
     </recent_temporary>

@@ -23,12 +23,10 @@ public class Header {
     }
 
 
-    // Method to get all navbar links
     public List<WebElement> getNavbarLinks() {
         return driver.findElements(By.cssSelector("#navbarExample .nav-link"));
     }
 
-    // Method to click a specific link by its text
     public void clickLinkByText(String linkText) {
         for (WebElement link : getNavbarLinks()) {
 
