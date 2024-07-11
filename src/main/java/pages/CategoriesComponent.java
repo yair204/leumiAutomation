@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.WaitDuration;
+
 import java.time.Duration;
 import java.util.List;
 import java.util.ArrayList;
@@ -13,7 +15,7 @@ import java.util.ArrayList;
 public class CategoriesComponent extends BasePage {
 
     public CategoriesComponent(WebDriver driver) {
-        super(driver);
+        super(driver, WaitDuration.MEDIUM);
     }
 
     private WebElement getCategoryElement(String category) {

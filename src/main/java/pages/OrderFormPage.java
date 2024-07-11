@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.WaitDuration;
+
 import java.time.Duration;
 
 public class OrderFormPage  extends BasePage{
@@ -12,7 +14,7 @@ public class OrderFormPage  extends BasePage{
     String orderModal;
 
     public OrderFormPage(WebDriver driver ,String orderModal) {
-        super(driver);
+        super(driver, WaitDuration.MEDIUM);
         this.orderModal = orderModal;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }

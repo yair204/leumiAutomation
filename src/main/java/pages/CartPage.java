@@ -3,11 +3,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.WaitDuration;
 
 public class CartPage extends BasePage{
 
     public CartPage(WebDriver driver) {
-        super(driver);
+        super(driver, WaitDuration.MEDIUM);
 
     }
 

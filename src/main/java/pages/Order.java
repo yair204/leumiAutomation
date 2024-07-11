@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.util.ArrayList;
 import java.util.List;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.WaitDuration;
+
 import java.time.Duration;
 
 
@@ -18,7 +20,7 @@ public class Order extends BasePage {
     String suffix;
 
     public Order(WebDriver driver, String BaseUrl) {
-        super(driver);
+        super(driver, WaitDuration.MEDIUM);
         this.numOfItems = 3;
         this.prices = new ArrayList<>();
         this.BaseUrl = BaseUrl;

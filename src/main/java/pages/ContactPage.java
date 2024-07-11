@@ -7,13 +7,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.WaitDuration;
+
 import java.time.Duration;
 
 
     public class ContactPage extends BasePage{
 
         public ContactPage(WebDriver driver) {
-            super(driver);
+            super(driver, WaitDuration.MEDIUM);
 
         }
 

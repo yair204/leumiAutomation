@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import utils.WaitDuration;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 public class HomePage extends BasePage{
 
     public HomePage(WebDriver driver) {
-        super(driver);
+        super(driver, WaitDuration.MEDIUM);
 
     }
     public String getPageTitle() {

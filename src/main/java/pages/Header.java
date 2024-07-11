@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.WaitDuration;
 
 import java.util.List;
 import java.time.Duration;
@@ -14,7 +15,7 @@ public class Header extends BasePage{
     String headerId ;
     String navbarLinks;
     public Header(WebDriver driver) {
-        super(driver);
+        super(driver, WaitDuration.MEDIUM);
         this.headerId = "navbarExample";
         this.navbarLinks = "#navbarExample .nav-link";
 
