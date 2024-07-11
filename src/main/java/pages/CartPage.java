@@ -4,11 +4,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class CartPage {
-    WebDriver driver;
+public class CartPage extends BasePage{
 
     public CartPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
 
     }
 
@@ -20,16 +19,16 @@ public class CartPage {
         return driver.getCurrentUrl();
     }
 
-    public WebElement getTotalPrice() {
-         return driver.findElement(By.id("totalp"));
+    public WebElement getTotalPrice(String id) {
+         return driver.findElement(By.id(id));
 
     }
-    public WebElement getPlaceOrderButton() {
-        return driver.findElement(By.className("btn-success"));
+    public WebElement getPlaceOrderButton(String className) {
+        return driver.findElement(By.className(className));
     }
 
-    public WebElement getTable(){
-        return driver.findElement(By.className("table-responsive"));
+    public WebElement getTable(String table){
+        return driver.findElement(By.className(table));
     }
 
 }

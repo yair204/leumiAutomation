@@ -14,17 +14,18 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import utils.WebDriverSingleton;
+
 
 public class CartPageTest {
     static WebDriver driver;
-
     static CartPage cartPage;
     static Header header;
     static Footer footer;
 
     @BeforeAll
     public static void setUp() {
-        driver = new ChromeDriver();
+        driver = WebDriverSingleton.getDriver();
         driver.get("https://www.demoblaze.com/cart.html");
         cartPage = new CartPage(driver);
         header = new Header(driver);
@@ -44,19 +45,24 @@ public class CartPageTest {
         assertTrue(headerNavBar.isDisplayed(), "header navigation bar is not displayed");
     }
 
+//    @Test
+//    public  void getTotal(){
+//        WebElement totalPrice =  cartPage.getTotalPrice("totalp");
+ //       WebElement placeHolderButton = cartPage.getPlaceOrderButton("btn-success");
+ //       WebElement table = cartPage.getTable("table-responsive");
+//
+//    }
+
     @Test
     public void testFooter() {
         WebElement footerNavBar = footer.getFooter();
         assertTrue(footerNavBar.isDisplayed(), "footer navigation bar is not displayed");
     }
-
-    @AfterAll
-    public static void tearDown() {
-        // Close the browser
-        if (driver != null) {
-            driver.quit();
-        }
-    }
+//    @AfterAll
+//    public static void tearDown() {
+//        // Close the browser
+//        WebDriverSingleton.quitDriver();
+//    }
 
 
 }

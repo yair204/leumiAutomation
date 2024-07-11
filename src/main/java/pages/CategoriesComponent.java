@@ -10,53 +10,50 @@ import java.time.Duration;
 import java.util.List;
 import java.util.ArrayList;
 
-public class CategoriesComponent {
-    WebDriver driver;
-    WebDriverWait wait;
+public class CategoriesComponent extends BasePage {
 
     public CategoriesComponent(WebDriver driver) {
-        this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        super(driver);
     }
 
     private WebElement getCategoryElement(String category) {
         return driver.findElement(By.xpath(".//a[contains(text(),'" + category + "')]"));
     }
 
-    public List<String> getLaptopsCategory() {
-        return getCategoryItems("Laptops");
+    public List<String> getLaptopsCategory(String laptops,String cssSelector) {
+        return getCategoryItems(laptops,cssSelector);
     }
 
-    public List<String> getPhonesCategory() {
-        return getCategoryItems("Phones");
+    public List<String> getPhonesCategory(String phones,String cssSelector) {
+        return getCategoryItems(phones,cssSelector);
     }
 
-    public List<String> getMonitorsCategory() {
-        return getCategoryItems("Monitors");
+    public List<String> getMonitorsCategory(String monitors,String cssSelector) {
+        return getCategoryItems(monitors,cssSelector);
     }
 
-    private List<String> getCategoryItems(String category) {
+    private List<String> getCategoryItems(String category,String cssSelector) {
         List<String> itemNames = new ArrayList<>();
         try {
             WebElement categoryElement = getCategoryElement(category);
             wait.until(ExpectedConditions.elementToBeClickable(categoryElement)).click();
             try {
-                Thread.sleep(3000);
+                Thread.sleep(4000);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
-            wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector(".card-title a.hrefch")));
+            wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector(cssSelector)));
 
 
-            List<WebElement> items = driver.findElements(By.cssSelector(".card-title a.hrefch"));
-            itemNames.clear(); // Clear the list before adding new items
+            List<WebElement> items = driver.findElements(By.cssSelector(cssSelector));
+            itemNames.clear();
             for (WebElement item : items) {
                 String itemName = item.getText();
                 itemNames.add(itemName);
             }
         } catch (StaleElementReferenceException e) {
             System.out.println("StaleElementReferenceException encountered, retrying...");
-            return getCategoryItems(category); // Retry fetching the items
+            return getCategoryItems(category,cssSelector); // Retry fetching the items
         }
         return itemNames;
     }

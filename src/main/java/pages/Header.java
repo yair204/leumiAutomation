@@ -9,22 +9,24 @@ import java.util.List;
 import java.time.Duration;
 
 
-public class Header {
-    WebDriver driver;
-    WebDriverWait wait;
+public class Header extends BasePage{
+
+    String headerId ;
+    String navbarLinks;
     public Header(WebDriver driver) {
-        this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        super(driver);
+        this.headerId = "navbarExample";
+        this.navbarLinks = "#navbarExample .nav-link";
 
 
     }
     public WebElement getHeader() {
-        return driver.findElement(By.id("navbarExample"));
+        return driver.findElement(By.id(headerId));
     }
 
 
     public List<WebElement> getNavbarLinks() {
-        return driver.findElements(By.cssSelector("#navbarExample .nav-link"));
+        return driver.findElements(By.cssSelector(navbarLinks));
     }
 
     public void clickLinkByText(String linkText) {

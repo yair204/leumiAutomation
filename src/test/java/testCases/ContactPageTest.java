@@ -9,6 +9,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import pages.ContactPage;
+import utils.WebDriverSingleton;
+
 
 public class ContactPageTest {
 
@@ -17,8 +19,8 @@ public class ContactPageTest {
 
         @BeforeAll
         public static void setUp() {
-            driver = new ChromeDriver();
-            driver.manage().window().maximize(); // Maximize the browser window
+            driver = WebDriverSingleton.getDriver();
+            driver.manage().window().maximize();
             driver.get("https://www.demoblaze.com/#");
 
             // Open the contact modal
@@ -39,13 +41,13 @@ public class ContactPageTest {
             assertTrue(alertText.contains("Thanks for the message!!"), "Expected alert text not found.");
         }
 
-        @AfterAll
-        public static void tearDown() {
-            // Close the browser
-            if (driver != null) {
-                driver.quit();
-            }
-        }
+//        @AfterAll
+//        public static void tearDown() {
+//            // Close the browser
+//            if (driver != null) {
+//                driver.quit();
+//            }
+//        }
     }
 
 

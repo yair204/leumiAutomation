@@ -10,13 +10,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 
-    public class ContactPage {
-        WebDriver driver;
-        WebDriverWait wait;
+    public class ContactPage extends BasePage{
 
         public ContactPage(WebDriver driver) {
-            this.driver = driver;
-            this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            super(driver);
 
         }
 

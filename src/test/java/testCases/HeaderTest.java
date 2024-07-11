@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.Header;
+import  utils.WebDriverSingleton;
 import java.time.Duration;
 
 
@@ -19,7 +20,7 @@ public class HeaderTest {
 
     @BeforeAll
     public static void setUp() {
-        driver = new ChromeDriver();
+        driver = WebDriverSingleton.getDriver();
         driver.get("https://www.demoblaze.com/");
         driver.manage().window().maximize();
         navbarPage = new Header(driver);
@@ -54,11 +55,11 @@ public class HeaderTest {
 
     }
 
-    @AfterAll
-    public static void tearDown() {
-        // Close the browser
-        if (driver != null) {
-            driver.quit();
-        }
-    }
+//    @AfterAll
+//    public static void tearDown() {
+//        // Close the browser
+//        if (driver != null) {
+//            driver.quit();
+//        }
+//    }
 }

@@ -5,66 +5,65 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.TimeoutException;
-
-import java.time.Duration;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
 
-public class Order {
-    WebDriver driver;
-    WebDriverWait wait;
+
+public class Order extends BasePage {
     int numOfItems;
     List<Integer> prices;
+    String BaseUrl;
+    String suffix;
 
-    public Order(WebDriver driver) {
-        this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    public Order(WebDriver driver, String BaseUrl) {
+        super(driver);
         this.numOfItems = 3;
         this.prices = new ArrayList<>();
+        this.BaseUrl = BaseUrl;
+        this.suffix = "cart.html";
     }
 
-    public List<String> getItemsFromCart() {
+    public List<String> getItemsFromCart(String tableId ,String tdTag,String trTag) {
         List<String> itemNames = new ArrayList<>();
-        driver.navigate().to("https://www.demoblaze.com/cart.html");
-        if (driver.getCurrentUrl().endsWith("cart.html")) {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("td")));
-            WebElement tbody = driver.findElement(By.id("tbodyid"));
-            List<WebElement> rows = tbody.findElements(By.tagName("tr"));
+        driver.navigate().to(BaseUrl + suffix);
+        if (driver.getCurrentUrl().endsWith(suffix)) {
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName(tdTag)));
+            WebElement tbody = driver.findElement(By.id(tableId));
+            List<WebElement> rows = tbody.findElements(By.tagName(trTag));
 
             for (WebElement row : rows) {
-                wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("td")));
-                WebElement itemNameCell = row.findElements(By.tagName("td")).get(1);
-                WebElement priceCell = row.findElements(By.tagName("td")).get(2);
+                wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName(tdTag)));
+                WebElement itemNameCell = row.findElements(By.tagName(tdTag)).get(1);
+                WebElement priceCell = row.findElements(By.tagName(tdTag)).get(2);
                 String itemName = itemNameCell.getText();
                 itemNames.add(itemName);
                 int price = Integer.parseInt(priceCell.getText());
                 this.prices.add(price);
+
             }
         }
         return itemNames;
     }
 
-    public void getPlaceOrderButton() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//a[contains(text(),'Add to cart')]")));
-        WebElement button = driver.findElement(By.xpath(".//a[contains(text(),'Add to cart')]"));
-        button.click();
+    public void getPlaceOrderButton(String button) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//a[contains(text(),'"+button+"')]"))).click();
     }
 
-    public List<String> addItemToCart() {
+    public List<String> addItemToCart(String cardAllocator) {
         List<String> itemNames = new ArrayList<>();
         for (int i = 0; i < this.numOfItems; i++) {
-            driver.navigate().to("https://www.demoblaze.com/");
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".card-title a.hrefch")));
-            List<WebElement> items = driver.findElements(By.cssSelector(".card-title a.hrefch"));
+            driver.navigate().to(BaseUrl);
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(cardAllocator)));
+            List<WebElement> items = driver.findElements(By.cssSelector(cardAllocator));
 
             if (!items.isEmpty() && i < items.size()) {
                 wait.until(ExpectedConditions.elementToBeClickable(items.get(i)));
                 WebElement item = items.get(i);
                 itemNames.add(item.getText());
                 item.click();
-                getPlaceOrderButton();
+                getPlaceOrderButton("Add to cart");
                 acceptAlert(10);
             } else {
                 System.out.println("No items found or index out of bounds");
@@ -74,14 +73,14 @@ public class Order {
         return itemNames;
     }
 
-    public void addItemForAlert() {
-        driver.navigate().to("https://www.demoblaze.com/");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".card-title a.hrefch")));
-        List<WebElement> items = driver.findElements(By.cssSelector(".card-title a.hrefch"));
+    public void addItemForAlert(String cssSelector) {
+        driver.navigate().to(BaseUrl);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(cssSelector)));
+        List<WebElement> items = driver.findElements(By.cssSelector(cssSelector));
         wait.until(ExpectedConditions.elementToBeClickable(items.get(0)));
         WebElement item = items.get(0);
         item.click();
-        getPlaceOrderButton();
+        getPlaceOrderButton("Add to cart");
     }
 
     public String handleAlert() {
@@ -98,13 +97,14 @@ public class Order {
             alertWait.until(ExpectedConditions.alertIsPresent());
             Alert alert = driver.switchTo().alert();
             alert.accept();
-        } catch (TimeoutException e) {
+        } catch (Exception e) {
             System.out.println("Alert not found within the specified time");
         }
     }
 
-    public int getTotalPrice() {
-        WebElement totalElement = driver.findElement(By.id("totalp"));
+    public int getTotalPrice(String totalpId) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(totalpId)));
+        WebElement totalElement = driver.findElement(By.id(totalpId));
         String totalText = totalElement.getText();
         return Integer.parseInt(totalText);
     }

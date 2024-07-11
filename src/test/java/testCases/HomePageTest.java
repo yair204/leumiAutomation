@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import pages.HomePage;
 import pages.Header;
 import pages.Footer;
+import utils.WebDriverSingleton;
 
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class HomePageTest {
 
     @BeforeAll
     public static void setUp() {
-        driver = new ChromeDriver();
+        driver = WebDriverSingleton.getDriver();
         driver.get("https://www.demoblaze.com/");
         homePage = new HomePage(driver);
         header = new Header(driver);
@@ -51,7 +52,7 @@ public class HomePageTest {
 
     @Test
     public void testHomeGageCarousel() {
-        WebElement carousel = homePage.getCarousel();
+        WebElement carousel = homePage.getCarousel("carouselExampleIndicators");
         assertTrue(carousel.isDisplayed(), "Carousel is not displayed");
     }
 
@@ -65,7 +66,7 @@ public class HomePageTest {
     @Test
     public void testGetCategories() {
         // Get the list of categories
-        var categories = homePage.getCategories();
+        var categories = homePage.getCategories("list-group","a");
 
         // Verify that the categories are not empty
         assertTrue(categories.size() > 0);
@@ -90,11 +91,11 @@ public class HomePageTest {
         assertTrue(items.contains("Sony vaio i7"), "Expected to find Nokia lumia 1520.");
     }
 
-    @AfterAll
-    public static void tearDown() {
-        // Close the browser
-        if (driver != null) {
-            driver.quit();
-        }
-    }
+//    @AfterAll
+//    public static void tearDown() {
+//        // Close the browser
+//        if (driver != null) {
+//            driver.quit();
+//        }
+//    }
 }

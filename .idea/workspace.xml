@@ -5,10 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b64f6555-0f12-4bec-a24b-cb6027f9bc0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/OrderFormPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/testCases/OrderFormPageTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/BasePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/WebDriverSingleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/CartPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/CategoriesComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/CategoriesComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/ContactPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/ContactPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/Footer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/Footer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/Header.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/OrderFormPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/OrderFormPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/CartPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/CartPageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/CategoriesComponentsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/CategoriesComponentsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/ContactPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/ContactPageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/HeaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/HeaderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/HomePageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/HomePageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/OrderFormPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/OrderFormPageTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testCases/OrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/OrderTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,66 +35,75 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
     <option name="showPreview" value="true" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2iKRHbynFf4vKGuQTeuFxlsGMm2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.GoogleTest.executor": "Run",
-    "Application.HomePage.executor": "Run",
-    "Application.Login_Tc.executor": "Run",
-    "Application.Main.executor": "Run",
-    "JUnit.ContactModalTest.executor": "Run",
-    "JUnit.HeaderTest.testNavbarLinks.executor": "Run",
-    "JUnit.OrderFormPageTest.executor": "Debug",
-    "JUnit.OrderFormPageTest.testOrderDetails.executor": "Run",
-    "JUnit.OrderFormPageTest.testOrderForm.executor": "Run",
-    "JUnit.OrderTest.addItems.executor": "Run",
-    "JUnit.OrderTest.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "TestNG.HomePageTest.executor": "Run",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/mefathim/Desktop/בית משפט/selenium-server-4.21.0.jar",
-    "onboarding.tips.debug.path": "/home/mefathim/IdeaProjects/leumiTask/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.GoogleTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HomePage.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Login_Tc.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CartPageTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CartPageTest.testCartPageUrl.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ContactModalTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HeaderTest.testNavbarLinks.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HomePageTest.testGetCategories.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OrderFormPageTest.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.OrderFormPageTest.testOrderDetails.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OrderFormPageTest.testOrderForm.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OrderTest.addItems (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OrderTest.addItems.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OrderTest.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;TestNG.HomePageTest.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/mefathim/leumiProject/LeumiAutomationDigitalPratiim&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/home/mefathim/IdeaProjects/leumiTask/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
-  <component name="RunManager">
-    <configuration name="HeaderTest.testNavbarLinks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="leumiTask" />
+}</component>
+  <component name="RunManager" selected="JUnit.CartPageTest.testCartPageUrl">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pages.Main" />
+      <module name="myMavenProject" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="testCases.*" />
+          <option name="PATTERN" value="pages.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="testCases" />
-      <option name="MAIN_CLASS_NAME" value="testCases.HeaderTest" />
-      <option name="METHOD_NAME" value="testNavbarLinks" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderFormPageTest.testOrderDetails" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="leumiTask" />
+    <configuration name="CartPageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myMavenProject" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="testCases.*" />
@@ -86,15 +111,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="testCases" />
-      <option name="MAIN_CLASS_NAME" value="testCases.OrderFormPageTest" />
-      <option name="METHOD_NAME" value="testOrderDetails" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="testCases.CartPageTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderFormPageTest.testOrderForm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="leumiTask" />
+    <configuration name="CartPageTest.testCartPageUrl" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myMavenProject" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="testCases.*" />
@@ -102,15 +126,15 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="testCases" />
-      <option name="MAIN_CLASS_NAME" value="testCases.OrderFormPageTest" />
-      <option name="METHOD_NAME" value="testOrderForm" />
+      <option name="MAIN_CLASS_NAME" value="testCases.CartPageTest" />
+      <option name="METHOD_NAME" value="testCartPageUrl" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="OrderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="leumiTask" />
+      <module name="myMavenProject" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="testCases.*" />
@@ -124,8 +148,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderTest.addItems" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="leumiTask" />
+    <configuration name="OrderTest.addItems (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myMavenProject" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="testCases.*" />
@@ -140,15 +164,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.OrderFormPageTest.testOrderDetails" />
-        <item itemvalue="JUnit.OrderFormPageTest.testOrderForm" />
-        <item itemvalue="JUnit.OrderTest.addItems" />
+        <item itemvalue="JUnit.CartPageTest.testCartPageUrl" />
+        <item itemvalue="JUnit.CartPageTest" />
         <item itemvalue="JUnit.OrderTest" />
-        <item itemvalue="JUnit.HeaderTest.testNavbarLinks" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.OrderTest.addItems (1)" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.9-corretto-17.0.9-4caba194b151-3c5dfc45" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -184,16 +226,5 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <option name="LAST_COMMIT_MESSAGE" value="first commit" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/testCases/OrderFormPageTest.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

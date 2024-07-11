@@ -7,17 +7,18 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
-public class OrderFormPage {
-    WebDriver driver;
-    WebDriverWait wait;
+public class OrderFormPage  extends BasePage{
 
-    public OrderFormPage(WebDriver driver) {
-        this.driver = driver;
+    String orderModal;
+
+    public OrderFormPage(WebDriver driver ,String orderModal) {
+        super(driver);
+        this.orderModal = orderModal;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     public void fillOrderForm(String name, String country, String city, String creditCard, String month, String year) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("orderModal")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(orderModal)));
 
         WebElement nameField = driver.findElement(By.id("name"));
         WebElement countryField = driver.findElement(By.id("country"));
@@ -34,30 +35,24 @@ public class OrderFormPage {
         yearField.sendKeys(year);
     }
 
-    public void submitOrder() {
-        WebElement purchaseButton = driver.findElement(By.xpath("//button[contains(text(),'Purchase')]"));
-        purchaseButton.click();
+    public void pressButton(String button) {
+        driver.findElement(By.xpath("//button[contains(text(),'"+ button +"')]")).click();
     }
 
-    public void closeOrderForm() {
-        WebElement closeButton = driver.findElement(By.xpath("//button[contains(text(),'Close')]"));
-        closeButton.click();
-    }
-    public void getPlaceOrderButton() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("btn-success")));
-        WebElement placeOrderButton =  driver.findElement(By.className("btn-success"));
+    public void getPlaceOrderButton(String buttonClass) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className(buttonClass)));
+        WebElement placeOrderButton =  driver.findElement(By.className(buttonClass));
         placeOrderButton.click();
     }
 
     public WebElement getOrderModel(){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("orderModal")));
-        return driver.findElement(By.id("orderModal"));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(orderModal)));
+        return driver.findElement(By.id(orderModal));
     }
 
-    public String getOrderConfirmationDetails() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".lead.text-muted")));
-        WebElement confirmationDetails = driver.findElement(By.cssSelector(".lead.text-muted"));
-        return confirmationDetails.getText();
+    public String getOrderConfirmationDetails(String confirmationDetailsAllocator) {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(confirmationDetailsAllocator))).getText();
+
     }
 
 

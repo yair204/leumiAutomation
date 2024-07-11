@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.Header;
 import pages.OrderFormPage;
+import utils.WebDriverSingleton;
 
 import java.util.List;
 
@@ -18,13 +19,16 @@ public class OrderFormPageTest {
 
     static WebDriver driver;
     static OrderFormPage orderForm;
+    static String orderModal;
 
     @BeforeAll
     public static void setUp() {
-        driver = new ChromeDriver();
+        driver = WebDriverSingleton.getDriver();
         driver.get("https://www.demoblaze.com/cart.html");
         driver.manage().window().maximize();
-        orderForm = new OrderFormPage(driver);
+        orderModal = "orderModal";
+        orderForm = new OrderFormPage(driver,orderModal);
+
 
     }
 
@@ -37,10 +41,10 @@ public class OrderFormPageTest {
         String month = "5";
         String year = "2025";
 
-        orderForm.getPlaceOrderButton();
+        orderForm.getPlaceOrderButton("btn-success");
         orderForm.fillOrderForm(name, country, city, creditCard, month, year);
-        orderForm.submitOrder();
-        String details = orderForm.getOrderConfirmationDetails();
+        orderForm.pressButton("Purchase");
+        String details = orderForm.getOrderConfirmationDetails(".lead.text-muted");
         assertTrue(details.contains(name) ,"Name error");
         assertTrue(details.contains(creditCard),"Card error");
         WebElement orderModel = orderForm.getOrderModel();
@@ -48,12 +52,12 @@ public class OrderFormPageTest {
 
     }
 
-    @AfterAll
-    public static void tearDown() {
-        // Close the browser
-        if (driver != null) {
-            driver.quit();
-        }
-    }
+//    @AfterAll
+//    public static void tearDown() {
+//        // Close the browser
+//        if (driver != null) {
+//            driver.quit();
+//        }
+//    }
 
 }

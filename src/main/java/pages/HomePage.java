@@ -12,14 +12,10 @@ import java.util.List;
 import java.util.ArrayList;
 
 
-public class HomePage {
-    WebDriver driver;
-    WebDriverWait wait;
-
+public class HomePage extends BasePage{
 
     public HomePage(WebDriver driver) {
-        this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(1000));
+        super(driver);
 
     }
     public String getPageTitle() {
@@ -30,9 +26,9 @@ public class HomePage {
         return driver.getCurrentUrl();
     }
 
-    public List<WebElement> getCategories() {
-        WebElement categoriesList = driver.findElement(By.className("list-group"));
-        List<WebElement> categories = categoriesList.findElements(By.tagName("a"));
+    public List<WebElement> getCategories(String className ,String tagName) {
+        WebElement categoriesList = driver.findElement(By.className(className));
+        List<WebElement> categories = categoriesList.findElements(By.tagName(tagName));
         for (WebElement category : categories) {
             System.out.println(category.getText());
         }
@@ -56,8 +52,8 @@ public class HomePage {
     }
 
 
-    public WebElement getCarousel(){
-        return driver.findElement(By.id("carouselExampleIndicators"));
+    public WebElement getCarousel(String carouselId ){
+        return driver.findElement(By.id(carouselId));
     }
 
 
